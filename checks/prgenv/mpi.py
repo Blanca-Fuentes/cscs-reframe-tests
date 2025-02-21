@@ -23,6 +23,7 @@ class MpiInitTest(rfm.RegressionTest):
     time_limit = '2m'
     build_locally = False
     tags = {'production', 'craype', 'uenv'}
+    prerun_cmds = ["MPICH_GPU_SUPPORT_ENABLED=0"]
 
     @run_before('run')
     def set_job_parameters(self):

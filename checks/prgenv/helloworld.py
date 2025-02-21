@@ -152,6 +152,7 @@ class HelloWorldTestMPI(HelloWorldBaseTest):
     num_tasks_per_node = 1
     num_cpus_per_task = 1
     valid_prog_environs = ['+mpi']
+    prerun_cmds = ["MPICH_GPU_SUPPORT_ENABLED=0"]
 
     @run_after('init')
     def update_description(self):
@@ -169,6 +170,7 @@ class HelloWorldTestMPIOpenMP(HelloWorldBaseTest):
     num_tasks_per_node = 3
     num_cpus_per_task = 4
     valid_prog_environs = ['+mpi +openmp']
+    prerun_cmds = ["MPICH_GPU_SUPPORT_ENABLED=0"]
 
     @run_after('init')
     def update_description(self):
